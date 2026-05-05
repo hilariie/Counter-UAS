@@ -1,7 +1,5 @@
 # Counter-UAS Perception-to-Intercept
 
-https://github.com/user-attachments/assets/a017b7b8-32b0-46b8-a3c2-3db582819e3b
-
 A simulated drone-defense system. Intruder drones approach a defended position; the system spots them with radar and a camera, decides which one is the biggest threat, locks a virtual gimbal camera onto it, and computes how to intercept it — all live, in a single operator dashboard.
 
 Built solo on a single 6 GB GPU, in a Cosys-AirSim simulation. Portfolio project.
