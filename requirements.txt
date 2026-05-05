@@ -1,0 +1,14 @@
+# CPU-compatible dependencies for CI and local development without GPU.
+# Install PyTorch first (separate index URL):
+#   pip install torch==2.5.1+cpu torchvision==0.20.1+cpu \
+#     --index-url https://download.pytorch.org/whl/cpu
+# Then install the rest:
+#   pip install -r requirements.txt
+
+ultralytics>=8.3.0
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+scipy>=1.11.0
+pygame>=2.5.0
+pyyaml>=6.0
+pytest>=7.4.0

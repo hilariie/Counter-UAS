@@ -1,0 +1,60 @@
+{
+  "SettingsVersion": 2.0,
+  "SimMode": "Multirotor",
+  "ClockSpeed": 1.0,
+  "ViewMode": "SpringArmChase",
+  "RpcEnabled": true,
+  "ApiServerPort": 41451,
+
+  "Vehicles": {
+    "Ownship": {
+      "VehicleType": "SimpleFlight",
+      "DefaultVehicleState": "Armed",
+      "AutoCreate": true,
+      "EnableCollisions": false,
+      "AllowAPIAlways": true,
+      "X": 200.0, "Y": 0.0, "Z": -10.0,
+      "Pitch": 0, "Roll": 0, "Yaw": 180,
+      "Cameras": {
+        "wide": {
+          "CaptureSettings": [
+            { "ImageType": 0, "Width": 640, "Height": 480, "FOV_Degrees": 90 }
+          ],
+          "X": 0.50, "Y": 0.0, "Z": -0.10,
+          "Pitch": -5, "Roll": 0, "Yaw": 0
+        },
+        "narrow": {
+          "CaptureSettings": [
+            { "ImageType": 0, "Width": 640, "Height": 480, "FOV_Degrees": 20},
+            { "ImageType": 5, "Width": 640, "Height": 480, "FOV_Degrees": 20}
+          ],
+          "X": 0.50, "Y": 0.0, "Z": -0.10,
+          "Pitch": -5, "Roll": 0, "Yaw": 0
+        }
+      }
+    },
+    "Z_Intruder1": {
+      "VehicleType": "SimpleFlight", "AutoCreate": true,
+      "DefaultVehicleState": "Armed",
+      "X": 195.0, "Y":  0.0, "Z": 0.0, "Yaw": 0,
+      "EnableCollisions": true, "AllowAPIAlways": true
+    },
+    "Z_Intruder2": {
+      "VehicleType": "SimpleFlight", "AutoCreate": true,
+      "DefaultVehicleState": "Armed",
+      "X": 150.0, "Y": 10.0, "Z": 0.0, "Yaw": 0,
+      "EnableCollisions": true, "AllowAPIAlways": true
+    },
+    "Z_Intruder3": {
+      "VehicleType": "SimpleFlight", "AutoCreate": true,
+      "DefaultVehicleState": "Armed",
+      "X": 100.0, "Y":   -2.0, "Z": 0.0, "Yaw": 90,
+      "EnableCollisions": true, "AllowAPIAlways": true
+    }
+  },
+
+  "SubWindows": [
+    { "WindowID": 0, "CameraName": "wide",   "ImageType": 0, "VehicleName": "Ownship", "Visible": true },
+    { "WindowID": 1, "CameraName": "narrow", "ImageType": 0, "VehicleName": "Ownship", "Visible": true }
+  ]
+}

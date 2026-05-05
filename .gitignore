@@ -1,0 +1,24 @@
+*.pt
+*.whl
+yolo/.venv
+yolo/*runs
+yolo/.claude
+yolo/labels
+yolo/images
+.claude
+Blocks_packaged_Windows_52_33/
+cuas-venv/
+yolo-test-results.txt
+cuas/out
+
+# Python cache files
+__pycache__/
+.pytest_cache
+*.py[cod]
+*$py.class
+
+*.mp4
+*PLAN.md
+*CLAUDE.md
+*NOTES.md
+*BRIEF.md

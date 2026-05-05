@@ -1,0 +1,28 @@
+# Cueing threat-score weights and scales. Hot-reloaded by 03_cueing_demo.py.
+# Edit during the demo to visibly shift the live ranking.
+#
+# v1.1 retune: scales matched to the actual Blocks scene (intruders 14-220 m,
+# tracks living 60+ s). Old defaults (range_scale=500, persistence_tau=3) had
+# every track saturated at r~0.96 / p=1.00 on the user's run, so the formula
+# stopped discriminating. w_sensor_agree bumped to break ties between fused
+# and single-modality tracks of similar bearing.
+
+# Weights — multiply each per-term [0,1] score.
+w_range:        1.0   # closer is more threatening
+w_range_rate:   2.5   # closing fast outweighs raw proximity
+w_heading:      1.0   # currently proxied by closing rate (Module 4 will replace)
+w_persistence:  0.5   # has the track survived a few seconds?
+w_sensor_agree: 1.5   # fused tracks should clearly outrank single-modality
+w_novelty:      0.3   # mild bias toward fresh tracks for the first ~5 s
+# Visual proxies — weighted by (1 - kinematic_confidence); zero when radar is healthy
+w_bbox_size:    0.8   # bbox area as range proxy
+w_bbox_growth:  2.0   # fractional bbox growth rate as closing proxy
+
+# Scales — set the saturation point of each per-term [0,1] score.
+range_scale_m:        200.0  # range term reaches 0 at this range; r=0.5 at 100 m
+rate_scale_mps:        30.0  # closing term saturates at -30 m/s
+persistence_tau_s:      8.0  # persistence term saturates at this age
+novelty_tau_s:          5.0  # novelty term decays to 0 by this age
+sensor_agree_window_s:  0.5  # both sensors must have updated within this window
+bbox_size_scale_frac:  0.04  # image area fraction that maps bbox_size_term to 1.0
+bbox_growth_scale_rps: 0.5   # fractional growth rate (per second) that maps bbox_growth_term to 1.0
